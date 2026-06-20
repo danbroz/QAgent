@@ -7,11 +7,10 @@ from Orchestrator import Orchestrator
 
 #========LLM configs========
 
-LLM_CHOICE = 'Qwen/Qwen3-Coder-30B-A3B-Instruct'
-LLM_KEY = 'Your Own Key'
-# by default the llm provider is Nebius.
-# Nscale and openai are also available
-# can be further extended in LLM.py 
+LLM_CHOICE = f"codex:{os.getenv('CODEX_MODEL', 'gpt-5.5')}"
+LLM_KEY = ""
+# Uses Codex CLI auth via `codex exec`, not this project's OpenAI API client.
+# To use an API/OpenAI-compatible provider instead, configure LLM_model in LLM.py.
 
 #========assignment strategy========
 #========    optional       ========
